@@ -1,104 +1,85 @@
 body {
-    background: #0E1414;
-    color: #FFF;
-    font-family: 'Open Sans', sans-serif;
-    padding: 2em;
+background:#0E1414;
+color:#FFF;
+font-family:'Open Sans',sans-serif;
+padding:1em;
 }
 
 .modal {
-    color: #0E1414;
+color:#0E1414;
 }
 
 p {
-    font-size: 18px;
-    font-weight: 300;
-    letter-spacing: 0;
-    line-height: 30px;
+font-size:18px;
+font-weight:300;
+letter-spacing:0;
+line-height:30px;
 }
 
-h2, h3, h5, .cta {
-    text-transform: uppercase;
+h2,h3,h5,.cta {
+text-transform:uppercase;
 }
 
 h2 {
-    color: #FFFFFF;
-    font-family: "Open Sans";
-    font-size: 42px;
-    font-weight: 300;
-    letter-spacing: 0.81px;
-    line-height: 57px;
-    text-align: center;
-    margin: 60px 0 60px;
+color:#FFF;
+letter-spacing:.81px;
+margin:60px 0;
+font:300 42px/57px "Open Sans";
 }
 
 h3 {
-    color: #FFFFFF;
-    font-family: "Open Sans";
-    font-size: 26px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-    line-height: 36px;
-    border-bottom: 1px solid #FFFFFF;
-    padding-bottom: 18px;
-    margin-bottom: 18px;
+color:#FFF;
+letter-spacing:.5px;
+border-bottom:1px solid #FFF;
+padding-bottom:18px;
+margin-bottom:18px;
+font:300 26px/36px "Open Sans";
 }
 
 h4 {
-    color: #FFFFFF;
-    font-family: "Open Sans";
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: 30px;
+color:#FFF;
+letter-spacing:0;
+font:600 18px/30px "Open Sans";
 }
 
 h5.be-mindful {
-    color: #CF1430;
-    font-family: "Open Sans";
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: 28px;
+color:#CF1430;
+letter-spacing:0;
+font:600 16px/28px "Open Sans";
 }
 
 .article-p {
-    color: #C2C2C2;
-    font-family: "Open Sans";
-    font-size: 16px;
-    font-weight: 300;
-    letter-spacing: 0;
-    line-height: 28px;
+color:#C2C2C2;
+letter-spacing:0;
+font:300 16px/28px "Open Sans";
 }
 
 #latest article figure img {
-    border-bottom: 4px solid #CF1430;
+border-bottom:4px solid #CF1430;
 }
 
 .cta {
-    color: #FFFFFF;
-    font-family: "Open Sans";
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: 30px;
-    text-decoration: none;
-    margin: 0;
-    padding: 0 0 4px;
-    border-bottom: 1px solid #CF1430;
-    transition: color 1s;
+color:#FFF;
+letter-spacing:0;
+text-decoration:none;
+margin:0;
+padding:0 0 4px;
+border-bottom:1px solid #CF1430;
+transition:color 1s;
+font:600 16px/30px "Open Sans";
 }
 
 .cta:hover {
-    color: #CF1430;
-    transition: color 1s;
+color:#CF1430;
+transition:color 1s;
 }
 
 .top-link img {
-    transition: opacity 1s ease;
-    opacity: 1;
+transition:opacity 1s ease;
+opacity:1;
 }
 
 a.top-link:hover img {
-    transition: opacity 1s ease;
-    opacity: 0.45;
+transition:opacity 1s ease;
+opacity:.45;
 }
