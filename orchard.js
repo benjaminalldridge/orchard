@@ -1,12 +1,14 @@
-document.addEventListener('click', function (event) {
+/* Capture click events and delegate down */
+document.addEventListener("click", (e) => {
+    /* Right now, we have no targets - do not do anything */
+    e.preventDefault();
 
-    // Are we on one of our links?
-    if (!event.path[1].matches('a.top-link.d-inline-flex')) return;
+    /* Capture the closest anchor to the click */
+	const origin = e.target.closest("a");
 
-    // We don't want to bubble up today because there is no content
-    event.preventDefault();
-    
-    // Log our message
-    console.log('Anchor clicked: ' + event.timeStamp);
-    
-}, false);
+    /* If there's no origin, send it back */
+	if (!origin) return;
+
+    /* Otherwise, log it */
+	console.log(origin);
+});
