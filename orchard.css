@@ -2,6 +2,7 @@ body {
     background: #0E1414;
     color: #FFF;
     font-family: 'Open Sans', sans-serif;
+    padding: 2em;
 }
 
 p {
@@ -11,7 +12,7 @@ p {
     line-height: 30px;
 }
 
-h2, h3, h5 {
+h2, h3, h5, .cta {
     text-transform: uppercase;
 }
 
@@ -38,7 +39,7 @@ h3 {
     margin-bottom: 18px;
 }
 
-  h4 {
+h4 {
     color: #FFFFFF;
     font-family: "Open Sans";
     font-size: 18px;
@@ -47,7 +48,7 @@ h3 {
     line-height: 30px;
 }
 
-  h5.be-mindful {
+h5.be-mindful {
     color: #CF1430;
     font-family: "Open Sans";
     font-size: 16px;
@@ -56,7 +57,7 @@ h3 {
     line-height: 28px;
 }
 
-  .article-p {
+.article-p {
     color: #C2C2C2;
     font-family: "Open Sans";
     font-size: 16px;
@@ -67,4 +68,33 @@ h3 {
 
 #latest article figure img {
     border-bottom: 4px solid #CF1430;
+}
+
+.cta {
+    color: #FFFFFF;
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 30px;
+    text-decoration: none;
+    margin: 0;
+    padding: 0 0 4px;
+    border-bottom: 1px solid #CF1430;
+    transition: color 1s;
+}
+
+.cta:hover {
+    color: #CF1430;
+    transition: color 1s;
+}
+
+.top-link img {
+    transition: opacity 1s ease;
+    opacity: 1;
+}
+
+a.top-link:hover img {
+    transition: opacity 1s ease;
+    opacity: 0.45;
 }
