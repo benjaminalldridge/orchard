@@ -5,6 +5,10 @@ body {
     padding: 2em;
 }
 
+.modal {
+    color: #0E1414;
+}
+
 p {
     font-size: 18px;
     font-weight: 300;
