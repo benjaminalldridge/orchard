@@ -83,6 +83,10 @@ h5.be-mindful {
     color: #FFF;
 }
 
+.modal-header {
+	border-bottom-color: #363c3c;
+}
+
 .close-button {
     background: transparent;
     border: 0;

@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="en">
-  <head>
+<html lang="en" ng-app="aegApp">
+<head>
 	<!-- Required meta -->
 	<meta charset="utf-8">
 	<!-- Viewport is responsive -->
@@ -8,19 +8,19 @@
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<!-- Orchard CSS -->
-	<link href="orchard.css" rel="stylesheet">
+	<link href="css/orchard.css" rel="stylesheet">
 	<!-- Fonts from Google -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&amp;display=swap" rel="stylesheet">
 	<!-- Bootstrap Icons -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-	<!-- Bootstrap Lightbox -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha512-Velp0ebMKjcd9RiCoaHhLXkR1sFoCCWXNp6w4zj1hfMifYB5441C+sKeBl/T/Ka6NjBiRfBBQRaQq65ekYz3UQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!-- Who needs a title anyway? -->
 	<title>Orchard FED test</title>
-  </head>
-  <body>
+</head>
+<body ng-controller="AegController">
+	<!-- AngularJS-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
 	<!-- Outer wrapper -->
 	<div class="container container-outer">
@@ -34,192 +34,103 @@
 				<!-- Column 3 -->
 				<div class="col-12 col-md-12 col-xl-4">
 					<!-- Section header -->
-					<header class="col-12"><h3>Answer Your Body's Needs</h3></header>
+					<header class="col-12"><h3>{{answers.title}}</h3></header>
 					
-					<p>The way ingredients are sourced affects the way we nourish our bodies. 
-					Author Mark Schatzer believes our body naturally devolops an appetite for 
-					the foods and nutrients it needs to be healthy, but that artificial flavourings 
-					are getting in the way. This can be reversed by focusing on high-quality 
-					ingredients and being mindful as your appetite guides you to consume according 
-					to your body's needs.</p>
+                    <!-- Section body -->
+					<p>{{answers.body}}</p>
 
 					<!-- Section subheader -->
 					<header>
-						<h5 class="be-mindful">Be Mindful</h5>
+						<h5 class="be-mindful">{{answers.subAnswers.title}}</h5>
 					</header>
-					<p><strong>Sourcing local or organic food is a good way to start being more 
-					mindful about what you're cooking and eating.</strong></p>
+					
+					<!-- Section subbody -->
+					<p><strong>{{answers.subAnswers.body}}</strong></p>
 				</div>
 
 				<!-- Column 2 -->
 				<div class="col-12 col-md-6 col-xl-4 d-flex flex-column justify-content-between">
 					<div class="col-12">
-						<a href="page-2.html" class="top-link d-inline-flex animate">
-							<img srcset="img/Image-02@2x.jpg 2x, img/Image-02.jpg 1x" 
-								src="img/Image-02.jpg" alt="" class="img-fluid w-100">
+						<a ng-href="{{answers.images[0].x1}}" class="top-link d-inline-flex animate" ng-data-id="{{answers.images[0].uuid}}"
+                            data-bs-toggle="modal" data-bs-target="#modal" ng-click="passModalImg($event, answers.images[0])">
+							<img ng-srcset="{{answers.images[0].x2}} 2x, {{answers.images[0].x1}} 1x" 
+								ng-src="{{answers.images[0].x1}}" alt="" class="img-fluid w-100">
 						</a>
 					</div>
 					<div class="col-12">
-						<a href="img/Image-06.jpg" class="top-link d-inline-flex animate" data-toggle="lightbox">
-							<img srcset="img/Image-06@2x.jpg 2x, img/Image-06.jpg 1x" 
-								src="img/Image-06.jpg" alt="" class="img-fluid w-100">
+						<a ng-href="{{answers.images[1].x1}}" class="top-link d-inline-flex animate" ng-data-id="{{answers.images[1].uuid}}"
+                            data-bs-toggle="modal" data-bs-target="#modal" ng-click="passModalImg($event, answers.images[1])">
+							<img ng-srcset="{{answers.images[1].x2}} 2x, {{answers.images[1].x1}} 1x" 
+								ng-src="{{answers.images[1].x1}}" alt="" class="img-fluid w-100">
 						</a>
 					</div>
 				</div>
 
 				<!-- Column 1 -->
 				<div class="col-12 col-md-6 col-xl-4">
-					<a href="page-1.html" class="top-link d-inline-flex animate">
-						<img srcset="img/Image-01@2x.jpg 2x, img/Image-01.jpg 1x" 
-							src="img/Image-01.jpg" alt="" class="img-fluid w-100">
-					</a>
+                    <a ng-href="{{answers.images[2].x1}}" class="top-link d-inline-flex animate" ng-data-id="{{answers.images[2].uuid}}"
+                        data-bs-toggle="modal" data-bs-target="#modal" ng-click="passModalImg($event, answers.images[2])">
+                        <img ng-srcset="{{answers.images[2].x2}} 2x, {{answers.images[2].x1}} 1x" 
+                            ng-src="{{answers.images[2].x1}}" alt="" class="img-fluid w-100">
+                    </a>
 				</div>
-				
 			</article>
-
 		</section>
 
 		<!-- Section 2 -->
-		<section class="row" id="latest">
+		<section id="latest">
 			<!-- Section header -->
 			<header class="col-12 align-self-center">
 				<h2 class="text-md-center">All the Latest From AEG</h2>
 			</header>
 
-			<!-- Article 1 -->
-			<article class="col-12 col-md-4 pb-4">
-				<!-- Article image -->
-				<figure>
-					<img srcset="img/Image-05@2x.jpg 2x, img/Image-05.jpg 1x" 
-						src="img/Image-05.jpg" alt="" class="img-fluid">
-				</figure>
+            <div class="articles row">
+                <!-- Article -->
+                <article class="col-12 col-md-4 pb-4" ng-repeat="article in articles" ng-data-id="{{article.uuid}}">
+                    <!-- Article image -->
+                    <figure>
+                        <img ng-srcset="{{article.image.x2}} 2x, {{article.image.x1}} 1x" 
+                            ng-src="{{article.image.x1}}" alt="" class="img-fluid">
+                    </figure>
 
-				<!-- Article header -->
-				<header>
-					<h4>Summer Lunch Menu By Mark Best</h4>
-				</header>
+                    <!-- Article header -->
+                    <header>
+                        <h4>{{article.title}}</h4>
+                    </header>
 
-				<!-- Article body -->
-				<p class="article-p">AEG ambassador Mark Best's summer eats are guaranteed to help you make the 
-				most of the warmer weather and entertaining at home.</p>
+                    <!-- Article body -->
+                    <p class="article-p">{{article.body}}</p>
 
-				<!-- Article CTA -->
-				<button type="button" class="btn btn-link cta" data-bs-toggle="modal" data-bs-target="#article-1-modal">Read More</button>
-
-				<!-- Modal -->
-				<div class="modal fade" id="article-1-modal" tabindex="-1" aria-labelledby="article-1-modal-label" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="article-1-modal-label">Summer Lunch Menu By Mark Best</h5>
-								<button type="button" class="close-button" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-circle text-white"></i></button>
-							</div>
-							<div class="modal-body">
-								<figure class="text-center">
-									<img srcset="img/Image-05@2x.jpg 2x, img/Image-05.jpg 1x" 
-										src="img/Image-05.jpg" alt="" class="img-fluid">
-								</figure>
-								<p>AEG ambassador Mark Best's summer eats are guaranteed to help you make the 
-									most of the warmer weather and entertaining at home.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</article>
-
-			<!-- Article 2 -->
-			<article class="col-12 col-md-4 pb-4">
-				<!-- Article image -->
-				<figure>
-					<img srcset="img/Image-04@2x.jpg 2x, img/Image-04.jpg 1x" 
-						src="img/Image-04.jpg" alt="" class="img-fluid">
-				</figure>
-
-				<!-- Article header -->
-				<header>
-					<h4>A Traditional Christmas Eve, Mark Best Style</h4>
-				</header>
-
-				<!-- Article body -->
-				<p class="article-p">One of Australia's best chefs and AEG ambassador, Mark Best, shares his favourite 
-				Christmas Eve menu which is sure to impress your guests.</p>
-
-				<!-- Article CTA -->
-				<button type="button" class="btn btn-link cta" data-bs-toggle="modal" data-bs-target="#article-2-modal">Read More</button>
-
-				<!-- Modal -->
-				<div class="modal fade" id="article-2-modal" tabindex="-1" aria-labelledby="article-2-modal-label" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="article-2-modal-label">A Traditional Christmas Eve, Mark Best Style</h5>
-								<button type="button" class="close-button" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-circle text-white"></i></button>
-							</div>
-							<div class="modal-body">
-								<figure class="text-center">
-									<img srcset="img/Image-04@2x.jpg 2x, img/Image-04.jpg 1x" 
-										src="img/Image-04.jpg" alt="" class="img-fluid">
-								</figure>
-								<p>One of Australia's best chefs and AEG ambassador, Mark Best, shares his favourite 
-									Christmas Eve menu which is sure to impress your guests.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</article>
-
-			<!-- Article 3 -->
-			<article class="col-12 col-md-4 pb-4">
-				<!-- Article image -->
-				<figure>
-					<img srcset="img/Image-03@2x.jpg 2x, img/Image-03.jpg 1x" 
-						src="img/Image-03.jpg" alt="" class="img-fluid">
-				</figure>
-
-				<!-- Article header -->
-				<header>
-					<h4>Taking Taste Further</h4>
-				</header>
-
-				<!-- Article body -->
-				<p class="article-p">This exclusive cookbook gives you all the know-how you need. We've designed it to 
-				make sure you get the most out of our products &ndash; and the best out of your food.</p>
-
-				<!-- Article CTA -->
-				<button type="button" class="btn btn-link cta" data-bs-toggle="modal" data-bs-target="#article-3-modal">Read More</button>
-
-				<!-- Modal -->
-				<div class="modal fade" id="article-3-modal" tabindex="-1" aria-labelledby="article-3-modal-label" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="article-3-modal-label">Taking Taste Further</h5>
-								<button type="button" class="close-button" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-circle text-white"></i></button>
-							</div>
-							<div class="modal-body">
-								<figure class="text-center">
-									<img srcset="img/Image-03@2x.jpg 2x, img/Image-03.jpg 1x" 
-										src="img/Image-03.jpg" alt="" class="img-fluid">
-								</figure>
-								<p>This exclusive cookbook gives you all the know-how you need. We've designed it to 
-								make sure you get the most out of our products &ndash; and the best out of your food.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</article>
+                    <!-- Article CTA -->
+                    <button type="button" class="btn btn-link cta" ng-click="openArticle($event, article)">Read More</button>
+                </article>
+            </div>
 
 		</section>
 	</div>
 
-	<!-- AngularJS-->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header d-inline-flex">
+                    <h5 class="modal-title">{{modalImages.uuid}}</h5>
+                    <button type="button" class="close-button text-white" data-bs-dismiss="modal" aria-label="Close">
+						<i class="bi bi-x-circle-fill"></i>
+					</button>
+                </div>
+                <div class="modal-body">
+                    <img ng-srcset="{{modalImages.x2}} 2x, {{modalImages.x1}} 1x" 
+                        ng-src="{{modalImages.x1}}" alt="" class="img-fluid w-100">
+                </div>
+            </div>
+        </div>
+    </div>
+
 	<!-- Bootstrap w/ Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-	<!-- Bootstrap Lightbox -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<!-- App logic -->
-	<script src="orchard.js"></script>
+	<script src="js/orchard.js"></script>
 
-  </body>
+</body>
 </html>
