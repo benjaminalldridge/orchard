@@ -5,10 +5,6 @@ body {
 	padding: 1em;
 }
 
-.modal {
-	color: #0e1414;
-}
-
 p {
 	font-size: 18px;
 	font-weight: 300;
@@ -77,15 +73,31 @@ h5.be-mindful {
 	transition: color 1s;
 }
 
+.container-outer {
+    max-width: 1200px;
+}
+
+.modal-header, 
+.modal-body {
+	background: #131818;
+    color: #FFF;
+}
+
+.close-button {
+    background: transparent;
+    border: 0;
+    font-size: 24px;
+}
+
 /** Animation from https://animate.style/ */
 :root {
-	--animate-duration: 1.75s;
+	--animate-duration: 1.25s;
 	--animate-delay: 1s;
 	--animate-repeat: 1;
 }
 .animate {
-	-webkit-animation-duration: 1.75s;
-	animation-duration: 1.75s;
+	-webkit-animation-duration: 1.25s;
+	animation-duration: 1.25s;
 	-webkit-animation-duration: var(--animate-duration);
 	animation-duration: var(--animate-duration);
 	-webkit-animation-fill-mode: both;
