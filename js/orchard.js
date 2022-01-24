@@ -79,8 +79,8 @@ aegApp.controller('AegController', function AegController($scope) {
 		// Log the click
 		$scope.logClick($event, article);
 
-		// Alert about opening a new page?
-		console.debug('If this were a live site, you would now be going to the page... /articles/' + article.uuid);
+		// Put some info in the log about opening a new page?
+		console.info('If this were a live site, you would now be going to the page... /articles/' + article.uuid);
 	};
 
 	// Handle the modal filling
