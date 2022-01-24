@@ -74,13 +74,13 @@ h5.be-mindful {
 }
 
 .container-outer {
-    max-width: 1200px;
+	max-width: 1200px;
 }
 
-.modal-header, 
+.modal-header,
 .modal-body {
 	background: #131818;
-    color: #FFF;
+	color: #fff;
 }
 
 .modal-header {
@@ -88,9 +88,9 @@ h5.be-mindful {
 }
 
 .close-button {
-    background: transparent;
-    border: 0;
-    font-size: 24px;
+	background: transparent;
+	border: 0;
+	font-size: 24px;
 }
 
 /** Animation from https://animate.style/ */

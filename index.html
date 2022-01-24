@@ -1,26 +1,37 @@
 <!doctype html>
 <html lang="en" ng-app="aegApp">
+
 <head>
 	<!-- Required meta -->
 	<meta charset="utf-8">
 	<!-- Viewport is responsive -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Bootstrap CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+		crossorigin="anonymous">
 	<!-- Orchard CSS -->
 	<link href="css/orchard.css" rel="stylesheet">
 	<!-- Fonts from Google -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&amp;display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&amp;display=swap"
+		rel="stylesheet">
 	<!-- Bootstrap Icons -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 	<!-- Who needs a title anyway? -->
 	<title>Orchard FED test</title>
 </head>
+
 <body ng-controller="AegController">
 	<!-- AngularJS-->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
+	</script>
 
 	<!-- Outer wrapper -->
 	<div class="container container-outer">
@@ -34,45 +45,61 @@
 				<!-- Column 3 -->
 				<div class="col-12 col-md-12 col-xl-4">
 					<!-- Section header -->
-					<header class="col-12"><h3>{{answers.title}}</h3></header>
-					
-                    <!-- Section body -->
+					<header class="col-12">
+						<h3>{{answers.title}}</h3>
+					</header>
+
+					<!-- Section body -->
 					<p>{{answers.body}}</p>
 
 					<!-- Section subheader -->
 					<header>
-						<h5 class="be-mindful">{{answers.subAnswers.title}}</h5>
+						<h5 class="be-mindful">{{answers.subAnswers.title}}
+						</h5>
 					</header>
-					
+
 					<!-- Section subbody -->
 					<p><strong>{{answers.subAnswers.body}}</strong></p>
 				</div>
 
 				<!-- Column 2 -->
-				<div class="col-12 col-md-6 col-xl-4 d-flex flex-column justify-content-between">
+				<div
+					class="col-12 col-md-6 col-xl-4 d-flex flex-column justify-content-between">
 					<div class="col-12">
-						<a ng-href="{{answers.images[0].x1}}" class="top-link d-inline-flex animate" ng-data-id="{{answers.images[0].uuid}}"
-                            data-bs-toggle="modal" data-bs-target="#modal" ng-click="passModalImg($event, answers.images[0])">
-							<img ng-srcset="{{answers.images[0].x2}} 2x, {{answers.images[0].x1}} 1x" 
-								ng-src="{{answers.images[0].x1}}" alt="" class="img-fluid w-100">
+						<a ng-href="{{answers.images[0].x1}}"
+							class="top-link d-inline-flex animate"
+							ng-data-id="{{answers.images[0].uuid}}"
+							data-bs-toggle="modal" data-bs-target="#modal"
+							ng-click="passModalImg($event, answers.images[0])">
+							<img ng-srcset="{{answers.images[0].x2}} 2x, {{answers.images[0].x1}} 1x"
+								ng-src="{{answers.images[0].x1}}" alt=""
+								class="img-fluid w-100">
 						</a>
 					</div>
 					<div class="col-12">
-						<a ng-href="{{answers.images[1].x1}}" class="top-link d-inline-flex animate" ng-data-id="{{answers.images[1].uuid}}"
-                            data-bs-toggle="modal" data-bs-target="#modal" ng-click="passModalImg($event, answers.images[1])">
-							<img ng-srcset="{{answers.images[1].x2}} 2x, {{answers.images[1].x1}} 1x" 
-								ng-src="{{answers.images[1].x1}}" alt="" class="img-fluid w-100">
+						<a ng-href="{{answers.images[1].x1}}"
+							class="top-link d-inline-flex animate"
+							ng-data-id="{{answers.images[1].uuid}}"
+							data-bs-toggle="modal" data-bs-target="#modal"
+							ng-click="passModalImg($event, answers.images[1])">
+							<img ng-srcset="{{answers.images[1].x2}} 2x, {{answers.images[1].x1}} 1x"
+								ng-src="{{answers.images[1].x1}}" alt=""
+								class="img-fluid w-100">
 						</a>
 					</div>
 				</div>
 
 				<!-- Column 1 -->
 				<div class="col-12 col-md-6 col-xl-4">
-                    <a ng-href="{{answers.images[2].x1}}" class="top-link d-inline-flex animate" ng-data-id="{{answers.images[2].uuid}}"
-                        data-bs-toggle="modal" data-bs-target="#modal" ng-click="passModalImg($event, answers.images[2])">
-                        <img ng-srcset="{{answers.images[2].x2}} 2x, {{answers.images[2].x1}} 1x" 
-                            ng-src="{{answers.images[2].x1}}" alt="" class="img-fluid w-100">
-                    </a>
+					<a ng-href="{{answers.images[2].x1}}"
+						class="top-link d-inline-flex animate"
+						ng-data-id="{{answers.images[2].uuid}}"
+						data-bs-toggle="modal" data-bs-target="#modal"
+						ng-click="passModalImg($event, answers.images[2])">
+						<img ng-srcset="{{answers.images[2].x2}} 2x, {{answers.images[2].x1}} 1x"
+							ng-src="{{answers.images[2].x1}}" alt=""
+							class="img-fluid w-100">
+					</a>
 				</div>
 			</article>
 		</section>
@@ -84,53 +111,65 @@
 				<h2 class="text-md-center">All the Latest From AEG</h2>
 			</header>
 
-            <div class="articles row">
-                <!-- Article -->
-                <article class="col-12 col-md-4 pb-4" ng-repeat="article in articles" ng-data-id="{{article.uuid}}">
-                    <!-- Article image -->
-                    <figure>
-                        <img ng-srcset="{{article.image.x2}} 2x, {{article.image.x1}} 1x" 
-                            ng-src="{{article.image.x1}}" alt="" class="img-fluid">
-                    </figure>
+			<div class="articles row">
+				<!-- Article -->
+				<article class="col-12 col-md-4 pb-4"
+					ng-repeat="article in articles"
+					ng-data-id="{{article.uuid}}">
+					<!-- Article image -->
+					<figure>
+						<img ng-srcset="{{article.image.x2}} 2x, {{article.image.x1}} 1x"
+							ng-src="{{article.image.x1}}" alt=""
+							class="img-fluid">
+					</figure>
 
-                    <!-- Article header -->
-                    <header>
-                        <h4>{{article.title}}</h4>
-                    </header>
+					<!-- Article header -->
+					<header>
+						<h4>{{article.title}}</h4>
+					</header>
 
-                    <!-- Article body -->
-                    <p class="article-p">{{article.body}}</p>
+					<!-- Article body -->
+					<p class="article-p">{{article.body}}</p>
 
-                    <!-- Article CTA -->
-                    <button type="button" class="btn btn-link cta" ng-click="openArticle($event, article)">Read More</button>
-                </article>
-            </div>
+					<!-- Article CTA -->
+					<button type="button" class="btn btn-link cta"
+						ng-click="openArticle($event, article)">Read
+						More</button>
+				</article>
+			</div>
 
 		</section>
 	</div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header d-inline-flex">
-                    <h5 class="modal-title">{{modalImages.uuid}}</h5>
-                    <button type="button" class="close-button text-white" data-bs-dismiss="modal" aria-label="Close">
+	<!-- Modal -->
+	<div class="modal fade" id="modal" tabindex="-1"
+		aria-labelledby="modalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header d-inline-flex">
+					<h5 class="modal-title">{{modalImages.uuid}}</h5>
+					<button type="button" class="close-button text-white"
+						data-bs-dismiss="modal" aria-label="Close">
 						<i class="bi bi-x-circle-fill"></i>
 					</button>
-                </div>
-                <div class="modal-body">
-                    <img ng-srcset="{{modalImages.x2}} 2x, {{modalImages.x1}} 1x" 
-                        ng-src="{{modalImages.x1}}" alt="" class="img-fluid w-100">
-                </div>
-            </div>
-        </div>
-    </div>
+				</div>
+				<div class="modal-body">
+					<img ng-srcset="{{modalImages.x2}} 2x, {{modalImages.x1}} 1x"
+						ng-src="{{modalImages.x1}}" alt=""
+						class="img-fluid w-100">
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- Bootstrap w/ Popper -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
 	<!-- App logic -->
 	<script src="js/orchard.js"></script>
 
 </body>
+
 </html>
